@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iykesol | The Future of Ethereum DeFi</title>
+    <meta
+      name="description"
+      content="Join the iykesol presale on Sepolia testnet. Buy $IYKESOL tokens with your wallet."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Background glows -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <!-- Header (rendered by layout.js) -->
+    <header id="app-header"></header>
+
+    <!-- Pages -->
+    <main>
+      <section id="home" class="page active"></section>
+      <section id="about" class="page"></section>
+      <section id="roadmap" class="page"></section>
+      <section id="buy" class="page"></section>
+    </main>
+
+    <!-- Mobile bottom nav (rendered by layout.js) -->
+    <nav id="bottom-nav"></nav>
+
+    <!-- Footer (rendered by layout.js) -->
+    <footer id="app-footer"></footer>
+
+    <!-- ── JavaScript Modules ── -->
+    <!-- ethers.js v5 for proper ABI encoding & contract reads -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+    <!-- State & wallet -->
+    <script src="js/store.js"></script>
+
+    <!-- Page modules -->
+    <script src="js/pages/home.js"></script>
+    <script src="js/pages/about.js"></script>
+    <script src="js/pages/roadmap.js"></script>
+    <script src="js/pages/buy.js"></script>
+
+    <!-- Layout & navigation -->
+    <script src="js/layout.js"></script>
+    <script src="js/router.js"></script>
+
+    <!-- App entry point -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

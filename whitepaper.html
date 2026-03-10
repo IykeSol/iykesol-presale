@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iykesol | Whitepaper - The Future of Ethereum DeFi</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: #050e0e;
+        color: #cbd5e1;
+        line-height: 1.8;
+        font-family: "Inter", sans-serif;
+      }
+      .wp-container {
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 6rem 1.5rem;
+      }
+      .wp-header {
+        text-align: center;
+        margin-bottom: 5rem;
+      }
+      .wp-header h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+      }
+      .wp-header .version {
+        color: var(--primary);
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+      }
+
+      section {
+        margin-bottom: 4rem;
+      }
+      h2 {
+        font-size: 2rem;
+        color: #fff;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        border-left: 4px solid var(--primary);
+        padding-left: 1.25rem;
+      }
+      h3 {
+        font-size: 1.35rem;
+        color: #fff;
+        font-weight: 700;
+        margin: 2rem 0 1rem;
+      }
+      p {
+        margin-bottom: 1.5rem;
+        font-size: 1.05rem;
+      }
+
+      .highlight-box {
+        background: rgba(13, 242, 242, 0.05);
+        border: 1px solid rgba(13, 242, 242, 0.2);
+        border-radius: 1.25rem;
+        padding: 2rem;
+        margin: 2.5rem 0;
+      }
+      .highlight-box h3 {
+        margin-top: 0;
+        color: var(--primary);
+      }
+
+      ul {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+      }
+      li {
+        margin-bottom: 0.75rem;
+        position: relative;
+        list-style-type: none;
+      }
+      li::before {
+        content: "•";
+        color: var(--primary);
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+
+      .nav-back {
+        position: fixed;
+        top: 2rem;
+        left: 2rem;
+        z-index: 100;
+      }
+      .nav-back a {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 0.6rem 1.2rem;
+        border-radius: 999px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.2s;
+      }
+      .nav-back a:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+      }
+
+      @media (max-width: 640px) {
+        .nav-back {
+          position: absolute;
+          top: 1.5rem;
+          left: 1.5rem;
+        }
+        .wp-container {
+          padding-top: 5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav-back">
+      <a href="index.html">← Back to App</a>
+    </div>
+
+    <div class="wp-container">
+      <div class="wp-header">
+        <div class="version">Technical Whitepaper v1.0</div>
+        <h1>The Future of <span class="gradient">Ethereum DeFi</span></h1>
+        <p>
+          A high-performance, low-cost liquidity layer built for the next
+          generation of decentralized finance.
+        </p>
+      </div>
+
+      <section id="abstract">
+        <h2>Abstract</h2>
+        <p>
+          iykesol represents a monumental shift in how decentralized finance
+          operates. By combining the speed of Ethereum's architecture with a
+          highly optimized liquidity engine, we've created a platform that
+          eliminates the traditional barriers of high gas fees and slow
+          execution times. This document outlines the technical foundation,
+          economic model, and strategic roadmap of the iykesol ecosystem.
+        </p>
+      </section>
+
+      <section id="vision">
+        <h2>Our Vision</h2>
+        <p>
+          The current DeFi landscape is fragmented, often forcing users to
+          choose between security and affordability. Our vision is to
+          democratize access to institutional-grade trading tools. We believe
+          that professional-level liquidity and sub-second execution should be
+          available to every participant in the global economy, regardless of
+          their capital size.
+        </p>
+
+        <div class="highlight-box">
+          <h3>Core Pillars</h3>
+          <ul>
+            <li>
+              <strong>Unmatched Velocity:</strong> Sub-second transaction
+              finality for real-time trading.
+            </li>
+            <li>
+              <strong>Zero Friction:</strong> Elimination of gas-related hurdles
+              for end-users.
+            </li>
+            <li>
+              <strong>Deep Liquidity:</strong> Proprietary AMM algorithms
+              designed for minimal slippage.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="technology">
+        <h2>Technical Architecture</h2>
+        <p>
+          iykesol is built on a modular tech stack designed for horizontal
+          scalability. Our core engine utilizes a parallel processing model that
+          handles thousands of transactions per second without congesting the
+          network.
+        </p>
+        <h3>Hybrid Execution Engine</h3>
+        <p>
+          By offloading computationally intensive tasks to specialized worker
+          nodes while maintaining state on-chain, we achieve the perfect balance
+          between centralized performance and decentralized trust.
+        </p>
+      </section>
+
+      <section id="tokenomics">
+        <h2>Tokenomics ($IYKESOL)</h2>
+        <p>
+          The $IYKESOL token is the heartbeat of our ecosystem, designed with a
+          focus on long-term sustainability and value capture for holders.
+        </p>
+        <ul>
+          <li><strong>Ticker:</strong> $IYKESOL</li>
+          <li><strong>Total Supply:</strong> 3,000,000,000</li>
+          <li>
+            <strong>Deflationary Mechanism:</strong> 2% of every transaction is
+            permanently burned.
+          </li>
+          <li>
+            <strong>Governance:</strong> Token holders have the right to vote on
+            protocol parameters and future integrations.
+          </li>
+        </ul>
+      </section>
+
+      <section id="roadmap">
+        <h2>The Roadmap</h2>
+        <h3>Phase 1: Genesis</h3>
+        <p>
+          Initial presale launch, smart contract audits, and community building.
+          Focus on establishing a robust foundation for the $IYKESOL token.
+        </p>
+        <h3>Phase 2: Deep Liquidity</h3>
+        <p>
+          Launch of the iykesol DEX, integration with major wallet providers,
+          and the initiation of our first liquidity mining programs.
+        </p>
+        <h3>Phase 3: Scaling</h3>
+        <p>
+          Cross-chain expansion, institutional partnership programs, and the
+          deployment of advanced DeFi primitives including leveraged trading and
+          synthetic assets.
+        </p>
+      </section>
+
+      <section id="conclusion">
+        <h2>Conclusion</h2>
+        <p>
+          iykesol is more than just a token; it's a movement towards a more
+          efficient and inclusive financial future. By joining the presale,
+          you're not just buying a token, you're becoming a stakeholder in the
+          next evolution of DeFi.
+        </p>
+      </section>
+
+      <footer
+        style="
+          text-align: center;
+          margin-top: 6rem;
+          padding-top: 2rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+        "
+      >
+        <p style="font-size: 0.9rem; color: var(--muted)">
+          © 2026 iykesol Technical Group. All rights reserved.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
