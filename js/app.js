@@ -1,24 +1,16 @@
-// js/app.js – Application entry point
-
 document.addEventListener("DOMContentLoaded", async () => {
-  // 1. Render layout (header, footer, bottom nav, timer)
   Layout.init();
 
-  // 2. Render all pages
   HomePage.render();
   AboutPage.render();
   RoadmapPage.render();
   BuyPage.render();
 
-  // 3. Start router (bind all [data-page] links)
   Router.init();
 
-  // 4. Load public contract data (works without wallet connection)
-  //    Uses a public Sepolia RPC endpoint for read-only calls
   if (window.ethereum) {
     try { await Store.loadContractData(); } catch (e) { console.warn("Contract read:", e); }
   } else {
-    // No wallet – fetch via public RPC
     const RPC = "https://rpc.ankr.com/eth_sepolia";
     const callViaRpc = async (fnSig, selector) => {
       const res = await fetch(RPC, {
@@ -46,7 +38,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-// Attach global objects to window as requested
 window.Layout = Layout;
 window.HomePage = HomePage;
 window.AboutPage = AboutPage;

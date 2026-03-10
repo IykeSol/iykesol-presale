@@ -1,5 +1,3 @@
-// js/pages/roadmap.js – Roadmap + FAQ page
-
 const faqs = [
   {
     q: "What is iykesol and why Sepolia?",

@@ -1,5 +1,3 @@
-// js/pages/about.js – About & Tokenomics page
-
 const AboutPage = {
   render() {
     document.getElementById("about").innerHTML = `

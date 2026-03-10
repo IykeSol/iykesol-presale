@@ -1,5 +1,3 @@
-// js/layout.js – Header, Navigation, Footer rendering
-
 const Layout = {
   init() {
     this.renderHeader();

@@ -3,151 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>iykesol | The Future of Solana DeFi</title>
+    <title>iykesol | The Future of Ethereum DeFi</title>
     <meta
       name="description"
-      content="Join the iykesol presale on Solana. Buy $IYKESOL tokens with your wallet."
+      content="Join the iykesol presale on Ethereum Sepolia. Buy $IYKESOL tokens with your wallet."
     />
 
-    <!-- Preconnect to font origins FIRST for faster DNS resolution -->
+    <!-- Preconnect to font origins for faster DNS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Load fonts ASYNC (non-render-blocking) -->
+    <!-- Fonts: synchronous to prevent CLS -->
     <link
-      rel="preload"
-      as="style"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      onload="this.rel = 'stylesheet'"
+      rel="stylesheet"
     />
     <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap&display=block"
-      onload="this.rel = 'stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block&display=swap"
+      rel="stylesheet"
     />
 
-    <!-- Fallback for browsers without JS (noscript) -->
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet"
-      />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap&display=block"
-        rel="stylesheet"
-      />
-    </noscript>
-
-    <!-- Critical styles inline so there's zero render-blocking CSS -->
-    <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      :root {
-        --bg: #090d0d;
-        --surface: rgba(40, 57, 57, 0.45);
-        --primary: #0df2f2;
-        --primary-dark: #0bc4c4;
-        --text: #f1f5f9;
-        --muted: #94a3b8;
-        --border: rgba(13, 242, 242, 0.12);
-        --border-solid: #1e293b;
-        --radius: 1rem;
-        --font: "Inter", sans-serif;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family: var(--font);
-        background: var(--bg);
-        color: var(--text);
-        min-height: 100dvh;
-        overflow-x: hidden;
-      }
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-      button {
-        font-family: inherit;
-        cursor: pointer;
-      }
-      input {
-        font-family: inherit;
-      }
-      ul {
-        list-style: none;
-      }
-      .blob {
-        position: fixed;
-        border-radius: 50%;
-        filter: blur(80px);
-        opacity: 0.35;
-        pointer-events: none;
-        z-index: 0;
-      }
-      .blob-1 {
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(
-          circle,
-          rgba(13, 242, 242, 0.4),
-          transparent 70%
-        );
-        top: -100px;
-        left: -100px;
-      }
-      .blob-2 {
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(
-          circle,
-          rgba(91, 33, 182, 0.5),
-          transparent 70%
-        );
-        bottom: -100px;
-        right: -50px;
-      }
-      main,
-      header,
-      footer,
-      nav {
-        position: relative;
-        z-index: 1;
-      }
-      .page {
-        display: none;
-      }
-      .page.active {
-        display: block;
-        animation: fadeIn 0.25s ease;
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(8px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
-
-    <!-- Main stylesheet (non-critical, loads after paint) -->
-    <link
-      rel="preload"
-      as="style"
-      href="css/styles.css"
-      onload="this.rel = 'stylesheet'"
-    />
-    <noscript><link rel="stylesheet" href="css/styles.css" /></noscript>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <!-- Background glows -->
@@ -171,14 +48,7 @@
     <!-- Footer (rendered by layout.js) -->
     <footer id="app-footer"></footer>
 
-    <!-- ── JavaScript Modules ── -->
-    <!-- ethers.js v5 — deferred so it NEVER blocks rendering -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"
-      defer
-    ></script>
-
-    <!-- State & wallet -->
+    <!-- State & wallet (no ethers yet – loads lazily on Connect) -->
     <script src="js/store.js" defer></script>
 
     <!-- Page modules -->

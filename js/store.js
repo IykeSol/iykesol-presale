@@ -1,12 +1,8 @@
-// js/store.js – Wallet management & on-chain contract reads
-
-// ─── Contract Config ─────────────────────────────────────────────
 const TOKEN_ADDRESS = "0x26Ad674da0Be6e1481ed260F7ad1706aF29475B8";
 const TOKEN_SYMBOL  = "$IYKESOL";
-const PRESALE_RATE  = 10_000; // 1 ETH = 10,000 $IYKESOL
-const CHAIN_ID_HEX  = "0xaa36a7"; // Sepolia
+const PRESALE_RATE  = 10_000; 
+const CHAIN_ID_HEX  = "0xaa36a7"; 
 
-// Multiple public Sepolia RPC endpoints (tried in order)
 const SEPOLIA_RPCS = [
   "https://ethereum-sepolia-rpc.publicnode.com",
   "https://1rpc.io/sepolia",
@@ -27,7 +23,17 @@ const TOKEN_ABI = [
   "function balanceOf(address account) view returns (uint256)",
 ];
 
-// ─── Helpers ──────────────────────────────────────────────────────
+function loadEthersIfNeeded() {
+  return new Promise((resolve, reject) => {
+    if (typeof ethers !== 'undefined') return resolve();
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js';
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+}
+
 function fmtToken(bn) {
   const n = parseFloat(ethers.utils.formatEther(bn));
   if (n >= 1e9) return (n / 1e9).toFixed(2) + "B";
@@ -41,17 +47,14 @@ function errMsg(err) {
   return err.reason || err.data?.message || err.message || JSON.stringify(err);
 }
 
-// Build a read-only provider: prefer MetaMask's provider (no CORS), fall back to RPC
 async function buildReadProvider() {
   if (window.ethereum) {
     try {
       const p = new ethers.providers.Web3Provider(window.ethereum);
-      // Quick health check
       await p.getBlockNumber();
       return p;
     } catch (_) { /* fallthrough */ }
   }
-  // Try public RPCs
   for (const rpc of SEPOLIA_RPCS) {
     try {
       const p = new ethers.providers.JsonRpcProvider(rpc);
@@ -62,7 +65,6 @@ async function buildReadProvider() {
   throw new Error("No working Sepolia RPC found");
 }
 
-// ─── Store ────────────────────────────────────────────────────────
 const Store = {
   account:        null,
   ethBalance:     "0",
@@ -70,9 +72,9 @@ const Store = {
   contractOwner:  null,
   isPaused:       false,
 
-  // ── Load public on-chain data (no wallet required) ────────────
   async loadContractData() {
     try {
+      await loadEthersIfNeeded();
       const provider = await buildReadProvider();
       const contract = new ethers.Contract(TOKEN_ADDRESS, TOKEN_ABI, provider);
 
@@ -88,13 +90,11 @@ const Store = {
       Store.isPaused      = paused;
       Store.contractOwner = owner;
 
-      // Update stats in DOM
       document.querySelectorAll(".stat-total-supply").forEach(el => el.textContent = fmtToken(supply));
       document.querySelectorAll(".stat-total-burned").forEach(el => el.textContent = fmtToken(burned));
       document.querySelectorAll(".stat-circulating").forEach(el  => el.textContent = fmtToken(circ));
       document.querySelectorAll(".stat-burn-pct").forEach(el     => el.textContent = burnPct.toString() + "%");
 
-      // Progress bar = circulating / totalSupply
       if (supply.gt(0)) {
         const pct = circ.mul(10000).div(supply).toNumber() / 100;
         document.querySelectorAll(".progress-bar-fill").forEach(

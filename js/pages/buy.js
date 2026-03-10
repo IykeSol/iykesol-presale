@@ -1,4 +1,3 @@
-// js/pages/buy.js – How to Buy Guide
 const BuyPage = {
   render() {
     document.getElementById("buy").innerHTML = `
