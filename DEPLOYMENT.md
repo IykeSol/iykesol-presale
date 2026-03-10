@@ -14,7 +14,7 @@ git init
 git add .
 
 # 3. Create your first commit
-git commit -m "Initial commit - iykesol premium"
+git commit -m "Initial commit - iykesol presale"
 
 # 4. Create a NEW Repository on GitHub.com (don't add README/License)
 # Then copy the 'remote' command from GitHub. It looks like this:
