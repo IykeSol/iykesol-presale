@@ -6,7 +6,7 @@ const HomePage = {
         <div class="hero-grid">
           <!-- Left: Text Content -->
           <div class="hero-content">
-            <div class="badge"><div class="dot"></div>Presale is Live – Sepolia</div>
+            <div class="badge"><div class="dot"></div>Presale is Live | Ethereum Sepolia</div>
             <h1 class="hero-title">The Future of<br><span class="gradient">Ethereum DeFi</span></h1>
             <p class="hero-desc">Join the iykesol presale and be part of the next generation of high-speed, low-cost crypto innovation. Experience unparalleled liquidity and lightning-fast execution.</p>
 
@@ -30,11 +30,11 @@ const HomePage = {
                 </div>
                 <div class="item">
                   <span class="material-symbols-outlined">shield</span>
-                  Sepolia Testnet
+                  Ethereum Sepolia
                 </div>
                 <div class="item">
                   <span class="material-symbols-outlined">hub</span>
-                  Thirdweb
+                  Ethers.js v5
                 </div>
               </div>
             </div>
