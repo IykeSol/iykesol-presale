@@ -9,21 +9,7 @@
       content="Join the iykesol presale on Ethereum Sepolia. Buy $IYKESOL tokens with your wallet."
     />
 
-    <!-- Preconnect to font origins for faster DNS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Fonts: synchronous to prevent CLS -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Styles -->
+    <!-- Styles – the ONLY external resource loaded at startup -->
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
@@ -48,7 +34,7 @@
     <!-- Footer (rendered by layout.js) -->
     <footer id="app-footer"></footer>
 
-    <!-- State & wallet (no ethers yet – loads lazily on Connect) -->
+    <!-- State & wallet -->
     <script src="js/store.js" defer></script>
 
     <!-- Page modules -->

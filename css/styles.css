@@ -1,4 +1,5 @@
-/* ─── CSS Reset & Design Tokens ──────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block');
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -11,7 +12,7 @@
   --border: rgba(13, 242, 242, 0.12);
   --border-solid: #1e293b;
   --radius: 1rem;
-  --font: 'Inter', sans-serif;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Helvetica Neue', Arial, sans-serif;
 }
 
 html { scroll-behavior: smooth; }
@@ -28,13 +29,11 @@ button { font-family: inherit; cursor: pointer; }
 input { font-family: inherit; }
 ul { list-style: none; }
 
-/* ─── Layout Helpers ─────────────────────────────────── */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
 .hidden { display: none !important; }
 .flex { display: flex; }
 .grid { display: grid; }
 
-/* ─── Glassmorphism ──────────────────────────────────── */
 .glass {
   background: var(--surface);
   backdrop-filter: blur(14px);
@@ -42,7 +41,6 @@ ul { list-style: none; }
   border-radius: var(--radius);
 }
 
-/* ─── Notifications ──────────────────────────────────── */
 #toast-container {
   position: fixed; top: 1.5rem; right: 1.5rem; z-index: 1100;
   display: flex; flex-direction: column; gap: .75rem;
@@ -82,7 +80,6 @@ ul { list-style: none; }
 @keyframes toastOut { to { opacity: 0; transform: translateX(50px); } }
 @keyframes toastProgress { from { width: 100%; } to { width: 0%; } }
 
-/* ─── Buttons ────────────────────────────────────────── */
 .btn-primary {
   display: inline-flex; align-items: center; gap: .5rem;
   background: var(--primary); color: #050e0e;
@@ -106,7 +103,6 @@ ul { list-style: none; }
 .btn-text { display: inline; }
 .btn-outline:hover { background: rgba(13, 242, 242, .17); }
 
-/* ─── Header ─────────────────────────────────────────── */
 header {
   position: sticky; top: 0; z-index: 100;
   background: rgba(9, 13, 13, .82);
